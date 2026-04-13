@@ -19,12 +19,11 @@ La plataforma está diseñada con un enfoque en la experiencia del usuario (UX/U
 ---
 
 ## 🧩 Estructura del Proyecto
-
-veterinaria-app/  
-│  
-├── index.html   # Estructura principal  
-├── styles.css   # Estilos de la aplicación  
-└── script.js    # Lógica y funcionalidades  
+veterinaria-app/
+│
+├── index.html    # Estructura principal
+├── styles.css    # Estilos
+└── script.js     # Lógica y funcionalidades
 
 ---
 
