@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Veterinaria App</title>
+
+  <!-- Evitar caché -->
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <h1>🐶 Gestión Veterinaria</h1>
+
+  <div class="container">
+    <h2>Agendar Cita</h2>
+
+    <input type="text" id="nombre" placeholder="Nombre del dueño">
+    <input type="text" id="mascota" placeholder="Nombre de la mascota">
+
+    <select id="servicio">
+      <option value="">Seleccione servicio</option>
+      <option>Vacunación</option>
+      <option>Peluquería</option>
+      <option>Consulta</option>
+      <option>Cirugía</option>
+    </select>
+
+    <input type="date" id="fecha">
+
+    <button onclick="agendar()">Agendar</button>
+
+    <h3>Citas registradas</h3>
+    <ul id="lista"></ul>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
