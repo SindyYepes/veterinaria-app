@@ -1,4 +1,3 @@
-// Cargar citas al iniciar
 document.addEventListener("DOMContentLoaded", mostrarCitas);
 
 function agendar() {
@@ -8,37 +7,48 @@ function agendar() {
   const fecha = document.getElementById("fecha").value;
 
   if (!nombre || !mascota || !servicio || !fecha) {
-    alert("Completa todos los campos");
+    alert("⚠️ Completa todos los campos");
     return;
   }
 
-  const nuevaCita = {
-    nombre,
-    mascota,
-    servicio,
-    fecha
-  };
+  const nuevaCita = { nombre, mascota, servicio, fecha };
 
   let citas = JSON.parse(localStorage.getItem("citas")) || [];
   citas.push(nuevaCita);
+
   localStorage.setItem("citas", JSON.stringify(citas));
 
   limpiarFormulario();
   mostrarCitas();
+
+  alert("✅ Cita registrada con éxito");
 }
 
 function mostrarCitas() {
   const lista = document.getElementById("lista");
   lista.innerHTML = "";
 
-  const citas = JSON.parse(localStorage.getItem("citas")) || [];
+  let citas = JSON.parse(localStorage.getItem("citas")) || [];
 
   citas.forEach((cita, index) => {
     const item = document.createElement("li");
-    item.textContent = `${cita.nombre} - ${cita.mascota} - ${cita.servicio} - ${cita.fecha}`;
+
+    item.innerHTML = `
+      ${cita.nombre} - ${cita.mascota} - ${cita.servicio} - ${cita.fecha}
+      <button class="delete-btn" onclick="eliminarCita(${index})">✖</button>
+    `;
 
     lista.appendChild(item);
   });
+}
+
+function eliminarCita(index) {
+  let citas = JSON.parse(localStorage.getItem("citas")) || [];
+
+  citas.splice(index, 1);
+  localStorage.setItem("citas", JSON.stringify(citas));
+
+  mostrarCitas();
 }
 
 function limpiarFormulario() {
