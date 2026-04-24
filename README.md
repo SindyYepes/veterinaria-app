@@ -90,6 +90,7 @@ http://localhost:3000
 Aplicación disponible en línea:
 
 👉 https://github.com/SindyYepes/veterinaria-app
+👉 https://sindyyepes.github.io/veterinaria-app/
 
 ---
 
